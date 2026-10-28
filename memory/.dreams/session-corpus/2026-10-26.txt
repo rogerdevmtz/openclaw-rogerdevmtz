@@ -1,0 +1,4 @@
+[main/sessions/main/e122d4b2-d51b-4d53-ae12-8ccad691acd6#L5] User: Responde solamente CONFIGURACION_OK sin usar herramientas
+[main/sessions/main/e122d4b2-d51b-4d53-ae12-8ccad691acd6#L8] User: Responde solamente CONFIGURACION_OK sin usar herramientas
+[main/sessions/main/e122d4b2-d51b-4d53-ae12-8ccad691acd6#L9] Assistant: CONFIGURACION_OK
+[main/sessions/main/e122d4b2-d51b-4d53-ae12-8ccad691acd6#L12] Assistant: Hola, soy tu nuevo asistente. ¿Cómo te gustaría llamarme? Mi vibra: tranquilo, resolutivo y cercano 🧭
