@@ -1,59 +1,47 @@
-# Mi Agente, A Mi Manera — Atlas para Roger
+# Mi Agente, A Mi Manera
 
-Entrega del bootcamp de Ingeniería de IA de 4Geeks Academy. Se amplía el mismo Atlas en la VPS y el mismo repositorio; no se reinstala OpenClaw ni se añaden APIs, OAuth o conexiones.
+**Roger · Bootcamp de Ingeniería de IA · 4Geeks Academy**
 
-## Diseño anterior a implementación
+Este proyecto adapta mi asistente Atlas a dos necesidades del estudiante: revisar una entrega antes de enviarla y superar un bloqueo al estudiar. Continúa sobre la misma VPS, el mismo repositorio y las conexiones existentes de OpenClaw, Telegram y Zapier.
 
-El commit `a85f2bb` contiene SKILLS_DESIGN.md antes de cualquier archivo de skill. El commit `d3b68c7` personaliza los cinco archivos. La configuración activa vive en `~/.openclaw/workspace/`: es el workspace que carga esta instalación, dentro de `.openclaw`. No se duplica en una ruta que el runtime no lea.
+## Mis dos skills
 
-## Personalización
+| Skill | Para qué sirve | Cómo se usa |
+| --- | --- | --- |
+| **Radar de entrega** | Compara el enunciado con el trabajo disponible, identifica evidencias faltantes y propone el siguiente paso. | «Revisa esta entrega y dime qué falta». |
+| **Tutor de rescate** | Plantea un ejercicio corto, revisa la respuesta y adapta las pistas. | «No entiendo este concepto; tengo diez minutos». |
 
-- IDENTITY.md: Atlas 🤖, asistente de Roger para aprender y ejecutar proyectos de IA.
-- SOUL.md: español directo, iniciativa en tareas reversibles, dudas explícitas y comprobación de resultados.
-- AGENTS.md: privacidad, preguntas ante datos esenciales ausentes, límites de acciones externas y protección contra duplicados. Se conservaron las convenciones existentes.
-- USER.md: contexto real de Roger, bootcamp, entrega actual, preferencias y zona Europe/Madrid.
-- TOOLS.md: exclusivamente Docs y Calendar conectados mediante Zapier MCP y el canal Telegram existente. Documenta valores por defecto y operaciones no disponibles.
+Radar puede guardar el informe en Google Docs. Tutor admite «pista», «ejemplo», «voy con prisa» y «cerrar»; guarda un resumen solo cuando se solicita.
 
-## Skills principales: productividad del estudiante
+## Personalización de Atlas
 
-El diseño ampliado se commiteó en `826beb6` antes de la implementación `32cf491`.
+- **IDENTITY.md:** nombre Atlas y símbolo 🤖.
+- **SOUL.md:** tono natural, claro y breve; iniciativa en tareas reversibles.
+- **AGENTS.md:** privacidad, límites y preguntas cuando faltan datos esenciales.
+- **USER.md:** mi contexto de estudiante, preferencias y zona Europe/Madrid.
+- **TOOLS.md:** conexiones disponibles, acciones permitidas y valores por defecto.
 
-1. **Radar de entrega** (`radar-entrega`): cruza cada requisito con evidencia real, distingue trabajo pendiente de evidencia ausente y recomienda la próxima acción. Puede guardar el informe en Docs.
-2. **Tutor de rescate** (`tutor-rescate`): plantea un microejercicio, espera un intento propio y adapta pistas y práctica. Incluye controles conversacionales «pista», «ejemplo», «voy con prisa» y «cerrar». Puede guardar un resumen sin inventar conocimientos del estudiante.
+La configuración activa y las skills están en `~/.openclaw/workspace/`. Se conservan también dos utilidades iniciales: diario de aprendizaje y reserva de estudio.
 
-Estas son las dos skills elegidas para la entrega final: responden a problemas de evaluación y comprensión. Conservan las dos utilidades iniciales siguientes.
+## Diseño y comprobaciones
 
-## Utilidades iniciales conservadas
+El diseño de las dos skills principales está en el commit `826beb6`, anterior a su implementación en `32cf491`.
 
-1. `skills/diario-bootcamp/SKILL.md`: convierte apuntes en un Google Doc nuevo, sin atribuir aprendizajes inventados. Un documento por entrada permite usar la acción disponible sin añadir permisos de edición.
-2. `skills/sesion-estudio/SKILL.md`: reserva estudio con objetivo, pasos y criterio de finalización. Pregunta si faltan horarios; no añade invitados ni presume disponibilidad.
+- Las skills pasan la validación de estructura y OpenClaw las reconoce como disponibles.
+- El diagnóstico final devuelve `ok: true`, con 36 comprobaciones y cero errores.
+- Radar creó un único documento y su contenido se comprobó por separado en Google Docs.
+- Tutor tiene pruebas de inicio, corrección y práctica guiada con ejercicio de transferencia.
+- No se añadieron APIs, OAuth ni servicios.
 
-Se eligieron porque ayudan a Roger a documentar el bootcamp y convertir próximos pasos en tiempo de estudio. Cada una aplica identidad, tono, límites, contexto y herramientas de los cinco archivos.
+El diagnóstico completo inicial mostró dos advertencias previas sobre acceso de nodos y secretos en la configuración. El resultado sin errores no implica ausencia de advertencias.
 
-## Comprobaciones
+## Entrega
 
-- Las cuatro skills pasan `quick_validate.py` de skill-creator.
-- OpenClaw las descubre como `openclaw-workspace`, `eligible: true`, `modelVisible: true`, sin requisitos faltantes. Ver JSON de descubrimiento en `evidencias/skills/`.
-- Tras editar los cinco archivos: `openclaw doctor --lint --severity-min error --json` devuelve `ok: true`, 36 comprobaciones y ningún error. El diagnóstico completo inicial informó dos advertencias preexistentes sobre acceso de nodos y secretos en configuración; el resultado filtrado no pretende afirmar que no existen advertencias.
-- Radar creó un Doc real y se comprobó su contenido de forma independiente en Chrome. Tutor pasó inicio y corrección adaptativa de un intento simulado. Resultados, límites e incidencias: [PRUEBAS.md](PRUEBAS.md).
+- [Diseño de las skills](SKILLS_DESIGN.md).
+- [Pruebas y resultados](PRUEBAS.md).
+- [Correspondencia con la evaluación](EVALUACION.md).
+- [Estado final y límites](CIERRE.md).
 
-## Uso desde Atlas
+La configuración privada de Zapier, las credenciales y la memoria personal quedan fuera de esta entrega.
 
-- «Revisa esta entrega con Radar: [enunciado y avances]. Dime qué falta y qué hago ahora».
-- «Me bloqueo con [concepto]. Usa Tutor de rescate; tengo diez minutos».
-- En el tutor: «pista», «ejemplo», «voy con prisa» o «cerrar». No es necesario recordar un comando técnico.
-- «Guarda este informe en Docs» para conservar el resultado de Radar o la práctica. Sin esa petición, el análisis permanece en la conversación.
-- «Guarda en mi diario de hoy estos apuntes del bootcamp: …»
-- «Reserva estudio de OpenClaw el [fecha] a las [hora], durante [duración]».
-
-Los puntos suspensivos y corchetes son instrucciones de uso, no los datos de las pruebas. Las entradas reales se conservan en las evidencias.
-
-## Reproducibilidad y privacidad
-
-Ejecutar desde el workspace activo. La configuración privada de mcporter continúa en `config/` de la VPS y se excluye del repositorio; quien clone necesita su propia instalación y conexiones previas. No se incluye ningún token, clave ni exportación de configuración. Los resultados completos del runtime quedan privados; la entrega usa resúmenes saneados.
-
-Referencias: [Skills de OpenClaw](https://docs.openclaw.ai/tools/skills), [workspace del agente](https://docs.openclaw.ai/concepts/agent-workspace). Se contrastó además la documentación local de la versión instalada 2026.10.7.
-
-## Evidencias para evaluar
-
-Consulta [EVALUACION.md](EVALUACION.md) para localizar cada criterio y [PRUEBAS.md](PRUEBAS.md) para los resultados reales. La exportación del informe de Radar permite revisarlo sin solicitar acceso al Doc privado. Su estado refleja el momento de la prueba, antes del cierre y publicación.
+Referencias: [skills de OpenClaw](https://docs.openclaw.ai/tools/skills) y [workspace](https://docs.openclaw.ai/concepts/agent-workspace).
