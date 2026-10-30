@@ -1,0 +1,36 @@
+{
+  "name": "tutor-rescate",
+  "description": "Ayuda a Roger a superar un bloqueo del bootcamp mediante un microejercicio, pistas graduadas y práctica adaptada al intento. Úsala para entender y practicar un concepto; no para certificar dominio sin respuestas propias ni para resolver automáticamente una evaluación.",
+  "source": "openclaw-workspace",
+  "bundled": false,
+  "filePath": "/root/.openclaw/workspace/skills/tutor-rescate/SKILL.md",
+  "baseDir": "/root/.openclaw/workspace/skills/tutor-rescate",
+  "skillKey": "tutor-rescate",
+  "always": false,
+  "disabled": false,
+  "blockedByAllowlist": false,
+  "eligible": true,
+  "missing": {
+    "bins": [],
+    "anyBins": [],
+    "env": [],
+    "config": [],
+    "os": []
+  },
+  "configChecks": [],
+  "blockedByAgentFilter": false,
+  "platformIncompatible": false,
+  "modelVisible": true,
+  "userInvocable": true,
+  "commandVisible": true,
+  "requirements": {
+    "bins": [
+      "mcporter"
+    ],
+    "anyBins": [],
+    "env": [],
+    "config": [],
+    "os": []
+  },
+  "install": []
+}

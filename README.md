@@ -14,7 +14,16 @@ El commit `a85f2bb` contiene SKILLS_DESIGN.md antes de cualquier archivo de skil
 - USER.md: contexto real de Roger, bootcamp, entrega actual, preferencias y zona Europe/Madrid.
 - TOOLS.md: exclusivamente Docs y Calendar conectados mediante Zapier MCP y el canal Telegram existente. Documenta valores por defecto y operaciones no disponibles.
 
-## Dos skills instaladas
+## Skills principales: productividad del estudiante
+
+El diseño ampliado se commiteó en `826beb6` antes de la implementación `32cf491`.
+
+1. **Radar de entrega** (`radar-entrega`): cruza cada requisito con evidencia real, distingue trabajo pendiente de evidencia ausente y recomienda la próxima acción. Puede guardar el informe en Docs.
+2. **Tutor de rescate** (`tutor-rescate`): plantea un microejercicio, espera un intento propio y adapta pistas y práctica. Incluye controles conversacionales «pista», «ejemplo», «voy con prisa» y «cerrar». Puede guardar un resumen sin inventar conocimientos del estudiante.
+
+Estas son las dos skills elegidas para la entrega final: responden a problemas de evaluación y comprensión. Conservan las dos utilidades iniciales siguientes.
+
+## Utilidades iniciales conservadas
 
 1. `skills/diario-bootcamp/SKILL.md`: convierte apuntes en un Google Doc nuevo, sin atribuir aprendizajes inventados. Un documento por entrada permite usar la acción disponible sin añadir permisos de edición.
 2. `skills/sesion-estudio/SKILL.md`: reserva estudio con objetivo, pasos y criterio de finalización. Pregunta si faltan horarios; no añade invitados ni presume disponibilidad.
@@ -23,13 +32,17 @@ Se eligieron porque ayudan a Roger a documentar el bootcamp y convertir próximo
 
 ## Comprobaciones
 
-- Ambas skills pasan `quick_validate.py` de skill-creator.
+- Las cuatro skills pasan `quick_validate.py` de skill-creator.
 - OpenClaw las descubre como `openclaw-workspace`, `eligible: true`, `modelVisible: true`, sin requisitos faltantes. Ver JSON de descubrimiento en `evidencias/skills/`.
 - Tras editar los cinco archivos: `openclaw doctor --lint --severity-min error --json` devuelve `ok: true`, 36 comprobaciones y ningún error. El diagnóstico completo inicial informó dos advertencias preexistentes sobre acceso de nodos y secretos en configuración; el resultado filtrado no pretende afirmar que no existen advertencias.
 - Los resultados de pruebas reales se documentan en PRUEBAS.md una vez terminados. No se consideran cumplidos por la mera validación de archivos.
 
 ## Uso desde Atlas
 
+- «Revisa esta entrega con Radar: [enunciado y avances]. Dime qué falta y qué hago ahora».
+- «Me bloqueo con [concepto]. Usa Tutor de rescate; tengo diez minutos».
+- En el tutor: «pista», «ejemplo», «voy con prisa» o «cerrar». No es necesario recordar un comando técnico.
+- «Guarda este informe en Docs» para conservar el resultado de Radar o la práctica. Sin esa petición, el análisis permanece en la conversación.
 - «Guarda en mi diario de hoy estos apuntes del bootcamp: …»
 - «Reserva estudio de OpenClaw el [fecha] a las [hora], durante [duración]».
 

@@ -1,0 +1,36 @@
+{
+  "name": "radar-entrega",
+  "description": "Revisa el enunciado y los avances de una entrega de Roger para detectar criterios sin cubrir, evidencias faltantes y próxima acción. Úsala antes de entregar o para desbloquear un proyecto; no asigna notas ni certifica archivos que no haya comprobado.",
+  "source": "openclaw-workspace",
+  "bundled": false,
+  "filePath": "/root/.openclaw/workspace/skills/radar-entrega/SKILL.md",
+  "baseDir": "/root/.openclaw/workspace/skills/radar-entrega",
+  "skillKey": "radar-entrega",
+  "always": false,
+  "disabled": false,
+  "blockedByAllowlist": false,
+  "eligible": true,
+  "missing": {
+    "bins": [],
+    "anyBins": [],
+    "env": [],
+    "config": [],
+    "os": []
+  },
+  "configChecks": [],
+  "blockedByAgentFilter": false,
+  "platformIncompatible": false,
+  "modelVisible": true,
+  "userInvocable": true,
+  "commandVisible": true,
+  "requirements": {
+    "bins": [
+      "mcporter"
+    ],
+    "anyBins": [],
+    "env": [],
+    "config": [],
+    "os": []
+  },
+  "install": []
+}

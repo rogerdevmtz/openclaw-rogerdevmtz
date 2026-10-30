@@ -14,3 +14,9 @@ Antes de ejecutar: `mcporter call zapier.inspect_zapier_actions`; inspecciona la
 - Gmail, Drive y Tasks: no hay acciones habilitadas verificadas. No usarlos ni activar nada para esta entrega. No hay firma de Gmail configurada.
 
 Si una acción devuelve error o una respuesta ambigua, informa; no repitas creaciones automáticamente. Conserva ID y enlace reales para la verificación, sin guardar tokens, cabeceras ni datos ajenos.
+
+### Creación de Docs: firma comprobada
+
+Tras inspeccionar la acción actual, el servidor usa `execute_zapier_write_action` con `selected_api`, `action`, `tool_name` y `params`. En esta instalación los valores verificados son `GoogleDocsV2CLIAPI`, `newtxtdocument` y `google_docs_create_document_from_text`; `params` contiene `title` y `file`. Si el catálogo cambia, usa los valores que devuelva la inspección actual.
+
+Para contenido largo, escribe los argumentos JSON en un archivo temporal privado y usa `mcporter call zapier.execute_zapier_write_action --args "$(cat /ruta/temporal.json)"`. No construyas el JSON concatenando texto del usuario en un comando. No necesitas listar el esquema de todo el servidor para cada creación. Reutiliza la firma ya verificada mientras siga vigente.

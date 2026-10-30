@@ -1,6 +1,9 @@
 # Contexto de Roger
 
 <!-- observed: 2026-10-30 | status: active -->
+- Mantén un tono natural, explica bien sin alargarte y conserva todos los requisitos y criterios de evaluación de la entrega.
+
+<!-- observed: 2026-10-30 | status: active -->
 - Dirígete al usuario como Roger y responde en español.
 
 <!-- observed: 2026-10-30 | status: active -->
