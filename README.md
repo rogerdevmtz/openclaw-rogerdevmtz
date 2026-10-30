@@ -35,7 +35,7 @@ Se eligieron porque ayudan a Roger a documentar el bootcamp y convertir próximo
 - Las cuatro skills pasan `quick_validate.py` de skill-creator.
 - OpenClaw las descubre como `openclaw-workspace`, `eligible: true`, `modelVisible: true`, sin requisitos faltantes. Ver JSON de descubrimiento en `evidencias/skills/`.
 - Tras editar los cinco archivos: `openclaw doctor --lint --severity-min error --json` devuelve `ok: true`, 36 comprobaciones y ningún error. El diagnóstico completo inicial informó dos advertencias preexistentes sobre acceso de nodos y secretos en configuración; el resultado filtrado no pretende afirmar que no existen advertencias.
-- Los resultados de pruebas reales se documentan en PRUEBAS.md una vez terminados. No se consideran cumplidos por la mera validación de archivos.
+- Radar creó un Doc real y se comprobó su contenido de forma independiente en Chrome. Tutor pasó inicio y corrección adaptativa de un intento simulado. Resultados, límites e incidencias: [PRUEBAS.md](PRUEBAS.md).
 
 ## Uso desde Atlas
 
@@ -53,3 +53,7 @@ Los puntos suspensivos y corchetes son instrucciones de uso, no los datos de las
 Ejecutar desde el workspace activo. La configuración privada de mcporter continúa en `config/` de la VPS y se excluye del repositorio; quien clone necesita su propia instalación y conexiones previas. No se incluye ningún token, clave ni exportación de configuración. Los resultados completos del runtime quedan privados; la entrega usa resúmenes saneados.
 
 Referencias: [Skills de OpenClaw](https://docs.openclaw.ai/tools/skills), [workspace del agente](https://docs.openclaw.ai/concepts/agent-workspace). Se contrastó además la documentación local de la versión instalada 2026.10.7.
+
+## Evidencias para evaluar
+
+Consulta [EVALUACION.md](EVALUACION.md) para localizar cada criterio y [PRUEBAS.md](PRUEBAS.md) para los resultados reales. La exportación del informe de Radar permite revisarlo sin solicitar acceso al Doc privado. Su estado refleja el momento de la prueba, antes del cierre y publicación.
