@@ -1,0 +1,36 @@
+{
+  "name": "sesion-estudio",
+  "description": "Reserva en Google Calendar una sesión de estudio de Roger con objetivo y criterio de finalización, usando la conexión Zapier existente. Pregunta por fecha, hora o duración ausentes; no gestiona reuniones con invitados ni recurrencias.",
+  "source": "openclaw-workspace",
+  "bundled": false,
+  "filePath": "/root/.openclaw/workspace/skills/sesion-estudio/SKILL.md",
+  "baseDir": "/root/.openclaw/workspace/skills/sesion-estudio",
+  "skillKey": "sesion-estudio",
+  "always": false,
+  "disabled": false,
+  "blockedByAllowlist": false,
+  "eligible": true,
+  "missing": {
+    "bins": [],
+    "anyBins": [],
+    "env": [],
+    "config": [],
+    "os": []
+  },
+  "configChecks": [],
+  "blockedByAgentFilter": false,
+  "platformIncompatible": false,
+  "modelVisible": true,
+  "userInvocable": true,
+  "commandVisible": true,
+  "requirements": {
+    "bins": [
+      "mcporter"
+    ],
+    "anyBins": [],
+    "env": [],
+    "config": [],
+    "os": []
+  },
+  "install": []
+}

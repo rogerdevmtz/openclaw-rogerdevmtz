@@ -1,0 +1,10 @@
+# Configuración privada y estado de ejecución: nunca forman parte de la entrega.
+config/
+memory/
+openclaw.json
+.env
+.env.*
+*.key
+*.pem
+# Resultados completos del runtime: conservar privados y publicar solo resumen saneado.
+evidencias/skills/*-resultado.json

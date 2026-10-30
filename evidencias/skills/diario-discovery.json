@@ -1,0 +1,36 @@
+{
+  "name": "diario-bootcamp",
+  "description": "Convierte apuntes de Roger sobre su bootcamp de Ingeniería de IA en una entrada estructurada y crea un Google Doc mediante el Zapier existente. Úsala para registrar aprendizaje; no para inventar experiencias ni modificar documentos existentes.",
+  "source": "openclaw-workspace",
+  "bundled": false,
+  "filePath": "/root/.openclaw/workspace/skills/diario-bootcamp/SKILL.md",
+  "baseDir": "/root/.openclaw/workspace/skills/diario-bootcamp",
+  "skillKey": "diario-bootcamp",
+  "always": false,
+  "disabled": false,
+  "blockedByAllowlist": false,
+  "eligible": true,
+  "missing": {
+    "bins": [],
+    "anyBins": [],
+    "env": [],
+    "config": [],
+    "os": []
+  },
+  "configChecks": [],
+  "blockedByAgentFilter": false,
+  "platformIncompatible": false,
+  "modelVisible": true,
+  "userInvocable": true,
+  "commandVisible": true,
+  "requirements": {
+    "bins": [
+      "mcporter"
+    ],
+    "anyBins": [],
+    "env": [],
+    "config": [],
+    "os": []
+  },
+  "install": []
+}
